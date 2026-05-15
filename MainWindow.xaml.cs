@@ -80,7 +80,10 @@ namespace lab_9
                 _currentTime += mins;
                 UpdateUI($"Добавлено минут: {mins}");
             }
-            else UpdateUI("Некорректное число минут", true);
+            else
+            {
+                UpdateUI("Некорректное число минут", true);
+            }
         }
 
         private void BtnSub_Click(object sender, RoutedEventArgs e)
@@ -90,7 +93,10 @@ namespace lab_9
                 _currentTime -= mins;
                 UpdateUI($"Вычтено минут: {mins}");
             }
-            else UpdateUI("Некорректное число минут", true);
+            else
+            {
+                UpdateUI("Некорректное число минут", true);
+            }
         }
 
         private void BtnToByte_Click(object sender, RoutedEventArgs e)
