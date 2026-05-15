@@ -25,7 +25,8 @@ namespace lab_9
             UpdateUI();
         }
 
-        private void UpdateUI(string message = "Готов к работе", bool isError = false)
+        private void UpdateUI(string message = "Готов к работе",
+            bool isError = false)
         {
             LblCurrentTime.Text = _currentTime.ToString();
             TxtStatus.Text = message;
@@ -36,7 +37,8 @@ namespace lab_9
         {
             try
             {
-                if (byte.TryParse(TxtHours.Text, out byte h) && byte.TryParse(TxtMinutes.Text, out byte m))
+                if (byte.TryParse(TxtHours.Text, out byte h)
+                    && byte.TryParse(TxtMinutes.Text, out byte m))
                 {
                     if (h < 24 && m < 60)
                     {
@@ -94,13 +96,15 @@ namespace lab_9
         private void BtnToByte_Click(object sender, RoutedEventArgs e)
         {
             byte h = (byte)_currentTime;
-            MessageBox.Show($"Значение часов (явное приведение): {h}", "Инфо");
+            MessageBox.Show($"Значение часов (явное приведение):" +
+                $" {h}", "Инфо");
         }
 
         private void BtnToBool_Click(object sender, RoutedEventArgs e)
         {
             bool notZero = _currentTime;
-            string msg = notZero ? "Время не 00:00" : "На часах полночь (00:00)";
+            string msg = notZero ? "Время не 00:00"
+                : "На часах полночь (00:00)";
             MessageBox.Show(msg, "Проверка (bool)");
         }
     }

@@ -36,13 +36,22 @@ namespace lab_9
 
         public byte Hours
         {
-            get { return _hours; }
-            set { _hours = (byte)(value % 24); }
+            get 
+            {
+                return _hours; 
+            }
+            set 
+            { 
+                _hours = (byte)(value % 24); 
+            }
         }
 
         public byte Minutes
         {
-            get { return _minutes; }
+            get 
+            { 
+                return _minutes; 
+            }
             set
             {
                 if (value < 60)
@@ -85,8 +94,10 @@ namespace lab_9
             return t._hours != 0 || t._minutes != 0;
         }
 
-        public static Time operator +(Time t, uint mins) => t?.AddMinutes(mins) ?? new Time(mins);
-        public static Time operator +(uint mins, Time t) => t?.AddMinutes(mins) ?? new Time(mins);
+        public static Time operator +(Time t, uint mins)
+            => t?.AddMinutes(mins) ?? new Time(mins);
+        public static Time operator +(uint mins, Time t)
+            => t?.AddMinutes(mins) ?? new Time(mins);
 
         public static Time operator -(Time t, uint mins)
         {
