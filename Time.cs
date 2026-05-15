@@ -74,15 +74,24 @@ namespace lab_9
 
         public static Time operator ++(Time t)
         {
-            if (t == null) return new Time();
+            if (t == null)
+            {
+                return new Time();
+            }
             return t.AddMinutes(1);
         }
 
         public static Time operator --(Time t)
         {
-            if (t == null) return new Time();
+            if (t == null)
+            {
+                return new Time();
+            }
             int total = t._hours * 60 + t._minutes - 1;
-            while (total < 0) total += 24 * 60;
+            while (total < 0)
+            {
+                total += 24 * 60;
+            }
             return new Time((uint)total);
         }
 
@@ -90,7 +99,10 @@ namespace lab_9
 
         public static implicit operator bool(Time t)
         {
-            if (t == null) return false;
+            if (t == null)
+            {
+                return false;
+            }
             return t._hours != 0 || t._minutes != 0;
         }
 
@@ -101,17 +113,29 @@ namespace lab_9
 
         public static Time operator -(Time t, uint mins)
         {
-            if (t == null) return new Time();
+            if (t == null)
+            {
+                return new Time();
+            }
             int total = t._hours * 60 + t._minutes - (int)mins;
-            while (total < 0) total += 24 * 60;
+            while (total < 0)
+            {
+                total += 24 * 60;
+            }
             return new Time((uint)total);
         }
 
         public static Time operator -(uint mins, Time t)
         {
-            if (t == null) return new Time();
+            if (t == null)
+            {
+                return new Time();
+            }
             int total = (int)mins - (t._hours * 60 + t._minutes);
-            while (total < 0) total += 24 * 60;
+            while (total < 0)
+            {
+                total += 24 * 60;
+            }
             return new Time((uint)total);
         }
 
